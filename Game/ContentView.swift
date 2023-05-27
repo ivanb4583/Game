@@ -9,22 +9,58 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
-    @Environment(\.managedObjectContext) private var viewContext
-    
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
-        animation: .default)
-    private var items: FetchedResults<Item>
-    
-    var body: some View {
-        Text("Hello. Some changes.")
-        //Changing World
-        
+ var body: some View {
+     HStack{
+        CardView(isFaceUp:true)
+        CardView(isFaceUp:true)
+        CardView(isFaceUp:true)
+        CardView(isFaceUp:true)
+
+     }
+
+     .padding(.horizontal)
+     .foregroundColor(.red)
+     
     }
+    
+    
+    struct CardView:View {
+        var isFaceUp:Bool
+        var body: some View {
+            ZStack {
+                if isFaceUp {
+                    RoundedRectangle(cornerRadius: 25).fill(.white)
+                    RoundedRectangle(cornerRadius: 25).stroke(lineWidth: 3)
+                    Text("✈️")
+                        .font(.largeTitle)
+                } else {
+                    RoundedRectangle(cornerRadius: 25).fill(.red)
+                }
+            }
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     struct ContentView_Previews: PreviewProvider {
         static var previews: some View {
-            ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+            ContentView()
+                .preferredColorScheme(.dark)
+            ContentView()
+                .preferredColorScheme(.light)
         }
     }
 }
