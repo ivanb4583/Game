@@ -11,10 +11,10 @@ import CoreData
 struct ContentView: View {
  var body: some View {
      HStack{
-        CardView(isFaceUp:true)
-        CardView(isFaceUp:true)
-        CardView(isFaceUp:true)
-        CardView(isFaceUp:true)
+        CardView()
+        CardView()
+        CardView()
+        CardView()
 
      }
 
@@ -25,16 +25,18 @@ struct ContentView: View {
     
     
     struct CardView:View {
-        var isFaceUp:Bool
+        var isFaceUp:Bool = true
         var body: some View {
             ZStack {
+                var shape =
+                RoundedRectangle(cornerRadius: 25)
                 if isFaceUp {
-                    RoundedRectangle(cornerRadius: 25).fill(.white)
-                    RoundedRectangle(cornerRadius: 25).stroke(lineWidth: 3)
+                    shape.fill(.white)
+                    shape.stroke(lineWidth: 3)
                     Text("✈️")
                         .font(.largeTitle)
                 } else {
-                    RoundedRectangle(cornerRadius: 25).fill(.red)
+                    shape.fill(.red)
                 }
             }
         }
