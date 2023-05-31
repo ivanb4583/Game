@@ -9,22 +9,45 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
- var emojis = ["🚂","🚗","🚲","🛵","🛵"]
+ var emojis = ["🚂","🚗","🚲","🛵","🚚","🚒","🚎","🚕","🚙","🏎️","🚓","🚑","🚐","🛻","🚛","🚜","🛴","🛺","🚔","🚍","✈️","🚀","🛳️","🚤"]
+ @State var emojiCount = 6
     
- var body: some View {
-     HStack{
-         ForEach (emojis, id: \.self, content: {emoji in
-             CardView(content: emoji)
-         })
+    var body: some View {
+        VStack{
+            HStack{
+                ForEach (emojis[0..<emojiCount], id: \.self) { emoji in
+                    CardView(content: emoji)
+                }
+                
+            }
+            
+            .padding(.horizontal)
+            .foregroundColor(.red)
+            HStack {
+                remove
+                Spacer()
+                add
+            }
+            .padding(.horizontal)
+        }
+        
 
-     }
-
-     .padding(.horizontal)
-     .foregroundColor(.red)
-     
+        }
+var remove: some View {
+        Button (action: {
+            emojiCount -= 1
+        }, label: {Image(systemName: "minus.circle"
+        )}
+        )
     }
+    var add: some View {
+        Button (action: {
+            emojiCount += 1
+        }, label: {Image(systemName: "plus.circle"
+        )}
+        )
     
-    
+    }
     struct CardView:View {
         var content: String
         @State var isFaceUp:Bool = true
