@@ -23,30 +23,33 @@ struct ContentView: View {
             
             .padding(.horizontal)
             .foregroundColor(.red)
+            Spacer()
             HStack {
                 remove
                 Spacer()
                 add
             }
             .padding(.horizontal)
+            .font(.largeTitle)
         }
         
 
         }
 var remove: some View {
-        Button (action: {
-            emojiCount -= 1
-        }, label: {Image(systemName: "minus.circle"
+        Button  {
+            if emojiCount > 1 {
+                emojiCount -= 1
+            }
+        } label: {Image(systemName: "minus.circle"
         )}
-        )
     }
     var add: some View {
-        Button (action: {
-            emojiCount += 1
-        }, label: {Image(systemName: "plus.circle"
+        Button  {
+            if emojiCount < emojis.count {
+                emojiCount += 1
+            }
+        } label: {Image(systemName: "plus.circle"
         )}
-        )
-    
     }
     struct CardView:View {
         var content: String
