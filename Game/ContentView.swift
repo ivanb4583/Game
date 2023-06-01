@@ -14,39 +14,43 @@ struct ContentView: View {
     
     var body: some View {
         VStack{
-            HStack{
-                ForEach (emojis[0..<emojiCount], id: \.self) { emoji in
-                    CardView(content: emoji)
+            ScrollView {
+                LazyVGrid(columns: [GridItem (.adaptive(minimum:65))]){
+                    ForEach (emojis[0..<emojiCount], id: \.self) { emoji in
+                        CardView(content: emoji).aspectRatio(2/3, contentMode: .fit)
+                    }
                 }
-                
             }
             
             .padding(.horizontal)
             .foregroundColor(.red)
+            Spacer()
             HStack {
                 remove
                 Spacer()
                 add
             }
             .padding(.horizontal)
+            .font(.largeTitle)
         }
         
 
         }
 var remove: some View {
-        Button (action: {
-            emojiCount -= 1
-        }, label: {Image(systemName: "minus.circle"
+        Button  {
+            if emojiCount > 1 {
+                emojiCount -= 1
+            }
+        } label: {Image(systemName: "minus.circle"
         )}
-        )
     }
     var add: some View {
-        Button (action: {
-            emojiCount += 1
-        }, label: {Image(systemName: "plus.circle"
+        Button  {
+            if emojiCount < emojis.count {
+                emojiCount += 1
+            }
+        } label: {Image(systemName: "plus.circle"
         )}
-        )
-    
     }
     struct CardView:View {
         var content: String
@@ -57,7 +61,7 @@ var remove: some View {
                 RoundedRectangle(cornerRadius: 25)
                 if isFaceUp {
                     shape.fill(.white)
-                    shape.stroke(lineWidth: 3)
+                    shape.strokeBorder(lineWidth: 3)
                     Text(content)
                         .font(.largeTitle)
                 } else {
