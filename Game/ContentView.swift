@@ -10,7 +10,7 @@ import CoreData
 
 struct ContentView: View {
  var emojis = ["🚂","🚗","🚲","🛵","🚚","🚒","🚎","🚕","🚙","🏎️","🚓","🚑","🚐","🛻","🚛","🚜","🛴","🛺","🚔","🚍","✈️","🚀","🛳️","🚤"]
- @State var emojiCount = 6
+ @State var emojiCount = 20
     
     var body: some View {
         VStack{
