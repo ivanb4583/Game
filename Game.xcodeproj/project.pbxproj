@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1B9CED022A2C394B00BE6A62 /* MemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9CED012A2C394B00BE6A62 /* MemoryGame.swift */; };
+		1B9CED042A2ED7DE00BE6A62 /* EmojiMemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9CED032A2ED7DE00BE6A62 /* EmojiMemoryGame.swift */; };
 		1BFA4CF12A20313B00314667 /* GameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFA4CF02A20313B00314667 /* GameApp.swift */; };
 		1BFA4CF32A20313B00314667 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFA4CF22A20313B00314667 /* ContentView.swift */; };
 		1BFA4CF52A20313C00314667 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BFA4CF42A20313C00314667 /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		1B9CED012A2C394B00BE6A62 /* MemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGame.swift; sourceTree = "<group>"; };
+		1B9CED032A2ED7DE00BE6A62 /* EmojiMemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMemoryGame.swift; sourceTree = "<group>"; };
 		1BFA4CED2A20313B00314667 /* Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Game.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BFA4CF02A20313B00314667 /* GameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameApp.swift; sourceTree = "<group>"; };
 		1BFA4CF22A20313B00314667 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 				1BFA4CF02A20313B00314667 /* GameApp.swift */,
 				1BFA4CF22A20313B00314667 /* ContentView.swift */,
 				1B9CED012A2C394B00BE6A62 /* MemoryGame.swift */,
+				1B9CED032A2ED7DE00BE6A62 /* EmojiMemoryGame.swift */,
 				1BFA4CF42A20313C00314667 /* Assets.xcassets */,
 				1BFA4CF92A20313C00314667 /* Persistence.swift */,
 				1BFA4CFB2A20313C00314667 /* Game.xcdatamodeld */,
@@ -151,6 +154,7 @@
 				1B9CED022A2C394B00BE6A62 /* MemoryGame.swift in Sources */,
 				1BFA4CF12A20313B00314667 /* GameApp.swift in Sources */,
 				1BFA4CFD2A20313C00314667 /* Game.xcdatamodeld in Sources */,
+				1B9CED042A2ED7DE00BE6A62 /* EmojiMemoryGame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
