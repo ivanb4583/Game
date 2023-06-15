@@ -12,7 +12,7 @@ struct MemoryGame<CardContent> {
     
    mutating func choose (_ card:Card) {
         let chosenIndex = index(of: card)
-        chosenCard.isFaceUp.toggle()
+        cards[chosenIndex].isFaceUp.toggle()
         print("\(cards)")
     }
     
@@ -41,4 +41,4 @@ struct MemoryGame<CardContent> {
         var id: Int
     }
 }
-//something
+
